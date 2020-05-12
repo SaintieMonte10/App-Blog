@@ -1,9 +1,9 @@
 import os
-from dotenv import load_dotenv
-load_dotenv()
+# from dotenv import load_dotenv
+# load_dotenv()
 class Config:
     SECRET_KEY = os.environ.get('SECRET_KEY')
-    SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL')
+    SQLALCHEMY_DATABASE_URI ='postgresql+psycopg2://clares:access@localhost/blog'
     SQLALCHEMY_TRACK_MODIFICATIONS=True
     MAIL_SERVER = 'smtp.gmail.com'
     MAIL_PORT = 587
@@ -13,3 +13,20 @@ class Config:
     MAIL_PASSWORD = os.environ.get("MAIL_PASSWORD")
     UPLOADED_PHOTOS_DEST ='app/static/photos'
     DEBUG = True
+
+
+    
+class ProdConfig(Config):
+    SQLALCHEMY_DATABASE_URI = os.environ.get("DATABASE_URL")
+  
+class TestConfig(Config):
+    SQLALCHEMY_DATABASE_URI ='postgresql+psycopg2://clares:access@localhost/blog_test'
+
+class DevConfig(Config):
+    DEBUG = True
+
+config_options = {
+'development':DevConfig,
+'production':ProdConfig,
+'test':TestConfig
+}
