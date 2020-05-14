@@ -63,4 +63,4 @@ claremonte53@gmail.com
 
 ## License
  
- Licensed under[MIT license](license)
+ Licensed under[MIT license](./LICENSE)
