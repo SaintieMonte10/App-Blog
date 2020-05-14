@@ -23,7 +23,7 @@ To get the code..
 1. Cloning the repository:
 
 ```bash
-https://github.com/chepkiruibetty/amazing-blog
+https://github.com/SaintieMonte10/App-Blog.git
 ```
 
 2. Move to the folder and install requirements
